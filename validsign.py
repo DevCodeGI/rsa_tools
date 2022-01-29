@@ -23,7 +23,24 @@ while True:
     else:
         message = input("Please enter the message to vaidate the signature: ")
         
-    signature = input("Please enter the signature: ")
+    
+    # Input Signature
+    print()
+    answer = input("Do you want to read the signature from file (y/n)? ").lower()
+    if answer == "y":
+        file_name = input("Enter the file name? ")
+        try:
+            with open(file_name, "r") as f:
+                signature = f.read()
+        except FileNotFoundError:
+            print(colored("Error! No such file or directory.", "red"))  
+            break     
+        except IsADirectoryError:
+            print(colored("Error! No such file or directory.", "red"))  
+            break       
+    else:
+        signature = input("Please enter the signature: ")
+
     rsatool.verification_data(message, signature)
         
     break

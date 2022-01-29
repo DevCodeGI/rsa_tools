@@ -31,4 +31,14 @@ while True:
                 + signature
                 + "\n-----END SIGNATURE-----")
         
+        # Ask to save into file
+        print()
+        answer = input("Do you want to save into file (y/n)? ").lower()
+        if answer == "y":
+            if file_name is None:
+                file_name = "noname"
+            with open(file_name + ".sign", "w") as f:
+                f.write(signature)
+                print(colored(f"Signature saved into '{file_name}.sign'.", "green"))
+        
     break

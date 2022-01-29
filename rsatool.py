@@ -95,7 +95,7 @@ class rsatool:
     def signing_data(self, message, password):
         try:
             # Load the private key
-            private_key = load_private_key(password)
+            private_key = self.load_private_key(password)
             
             if private_key is not None:
                 chosen_hash = hashes.SHA256()
@@ -121,7 +121,7 @@ class rsatool:
     def verification_data(self, message, signature):
         try:
             # Load the public key
-            public_key = load_public_key()
+            public_key = self.load_public_key()
 
             if public_key is not None:
                 chosen_hash = hashes.SHA256()
@@ -151,7 +151,7 @@ class rsatool:
     def encrypt(self, message):
         try:
             # Load the public key
-            public_key = load_public_key()
+            public_key = self.load_public_key()
             
             if public_key is not None:      
                 ciphertext = public_key.encrypt(
@@ -172,7 +172,7 @@ class rsatool:
     def decrypt(self, ciphertext, password):
         try:
             # Load the private key
-            private_key = load_private_key(password)
+            private_key = self.load_private_key(password)
             
             if private_key is not None:            
                 plaintext = private_key.decrypt(
