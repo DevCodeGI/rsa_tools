@@ -162,6 +162,8 @@ def encrypt(message):
             )
         
             return base64.b64encode(ciphertext).decode()
+    except ValueError:
+        print(colored("Error! Encryption failed.", "red"))
     except Exception:
         traceback.print_exc()
         
@@ -182,7 +184,7 @@ def decrypt(ciphertext, password):
             
             return plaintext.decode()
     except ValueError:
-        print(colored("Error! Encryption/decryption failed.", "red"))
+        print(colored("Error! Decryption failed.", "red"))
     except binascii.Error:
         print(colored("Error! Unsupported encryption format.", "red"))
     except Exception:

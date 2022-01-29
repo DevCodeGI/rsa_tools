@@ -17,6 +17,9 @@ while True:
         except FileNotFoundError:
             print(colored("Error! No such file or directory.", "red"))  
             break     
+        except IsADirectoryError:
+            print(colored("Error! No such file or directory.", "red"))  
+            break       
     else:
         message = input("Please enter the message to encrypt: ")
  
