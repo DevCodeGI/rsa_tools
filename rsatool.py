@@ -151,7 +151,7 @@ def encrypt(message):
         # Load the public key
         public_key = load_public_key()
         
-        if public_key is not None:        
+        if public_key is not None:      
             ciphertext = public_key.encrypt(
                 message.encode(),
                 padding.OAEP(
@@ -181,6 +181,8 @@ def decrypt(ciphertext, password):
             )
             
             return plaintext.decode()
+    except ValueError:
+        print(colored("Error! Encryption/decryption failed.", "red"))
     except binascii.Error:
         print(colored("Error! Unsupported encryption format.", "red"))
     except Exception:
