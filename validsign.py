@@ -1,9 +1,12 @@
-import rsatool
+from rsatool import rsatool
 from termcolor import colored
 
     
 ## Main entry point    
 while True:
+    # Create object
+    rsatool = rsatool()
+    
     # Start to validation signature
     answer = input("Do you want to validate the signature from file (y/n)? ").lower()
     if answer == "y":

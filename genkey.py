@@ -5,6 +5,7 @@ from getpass import getpass
 
 ## Main entry point
 while True:
+    # Create object
     rsatool = rsatool()
     
     # Ask the password to generate the key

@@ -1,4 +1,5 @@
-import rsatool, os
+from rsatool import rsatool
+import os
 from termcolor import colored
 from getpass import getpass
 
@@ -8,6 +9,9 @@ file_name = None
 
 ## Main entry point    
 while True:
+    # Create object
+    rsatool = rsatool()
+    
     # Start to decrypt data
     answer = input("Do you want to decrypt from file (y/n)? ").lower()
     if answer == "y":

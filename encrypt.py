@@ -1,4 +1,4 @@
-import rsatool
+from rsatool import rsatool
 from termcolor import colored
 
 #Define variables
@@ -7,6 +7,9 @@ file_name = None
 
 ## Main entry point    
 while True:
+    # Create object
+    rsatool = rsatool()
+    
     # Start to encrypt data
     answer = input("Do you want to encrypt the plaintext from file (y/n)? ").lower()
     if answer == "y":

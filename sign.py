@@ -1,10 +1,13 @@
-import rsatool
+from rsatool import rsatool
 from termcolor import colored
 from getpass import getpass
 
 
 ## Main entry point    
 while True:
+    # Create object
+    rsatool = rsatool()
+    
     # Start to signature data
     answer = input("Do you want to signature from file (y/n)? ").lower()
     if answer == "y":

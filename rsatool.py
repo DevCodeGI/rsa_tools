@@ -3,7 +3,7 @@ from cryptography.hazmat.primitives import serialization, hashes
 from cryptography.hazmat.primitives.asymmetric import padding, rsa, dsa, utils
 from cryptography.hazmat.backends import default_backend
 from cryptography.exceptions import InvalidSignature, UnsupportedAlgorithm
-from termcolor import colored
+from termcolor import colored 
 
 class rsatool:
     
