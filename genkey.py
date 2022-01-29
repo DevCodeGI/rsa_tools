@@ -1,10 +1,12 @@
-import rsatool
+from rsatool import rsatool
 from termcolor import colored
 from getpass import getpass
 
 
 ## Main entry point
 while True:
+    rsatool = rsatool()
+    
     # Ask the password to generate the key
     master_password = getpass("Enter new password: ")
     if master_password != getpass("Confirm new password: "):
